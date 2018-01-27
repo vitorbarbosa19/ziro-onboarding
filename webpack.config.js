@@ -5,7 +5,7 @@ const path = require('path')
 const config = {
 	entry: './src/index.js',
 	output: {
-		path: path.resolve(__dirname, 'build')
+		path: path.resolve(__dirname, 'build'),
 		filename: 'index.bundle.js'
 	},
 	module: {
@@ -21,7 +21,7 @@ const config = {
 							'@babel/preset-react'
 						],
 						plugins: [
-							'@babel/transform-runtime'
+							'@babel/transform-runtime',
 							'@babel/plugin-proposal-class-properties'
 						]
 					}

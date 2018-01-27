@@ -1,5 +1,6 @@
 import React from 'react'
+import RegisterNewClient from './RegisterNewClient/index'
 
-const App = () => ( <div>Hello</div> )
+const App = () => ( <RegisterNewClient /> )
 
 export default App
