@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { grid, lojista, assessoria, form, info, field, input } from './styles'
+import { Image } from 'cloudinary-react'
+import { grid, lojista, assessoria, form, panel, info, field, label, input, span, logo } from './styles'
 
 export default class RegisterNewClient extends Component {
 	constructor(props) {
@@ -14,86 +15,139 @@ export default class RegisterNewClient extends Component {
 			<div style={grid}>
 				<div style={lojista}>
 					<div style={form}>
-						{/* LOJISTA FIELD */}
-						<div style={field('lojista')}>
-							<label>Lojista</label>
+						{/* NOME FIELD */}
+						<div style={field('nome')}>
+							<label style={label}>Nome</label>
 							<input style={input} type='text' />
 						</div>
 						{/* RG FIELD */}
 						<div style={field('rg')}>
-							<label>Rg</label>
+							<label style={label}>Rg</label>
 							<input style={input} type='text' />
 						</div>
 						{/* CPF FIELD */}
 						<div style={field('cpf')}>
-							<label>Cpf</label>
+							<label style={label}>Cpf</label>
 							<input style={input} type='text' />
 						</div>
 						{/* CNPJ FIELD */}
 						<div style={field('cnpj')}>
-							<label>Cnpj</label>
+							<label style={label}>Cnpj</label>
 							<input style={input} type='text' />
 						</div>
 						{/* IE FIELD */}
 						<div style={field('ie')}>
-							<label>Ie</label>
+							<label style={label}>Ie</label>
 							<input style={input} type='text' />
 						</div>
 						{/* RAZAO SOCIAL FIELD */}
 						<div style={field('razaoSocial')}>
-							<label>Razão Social</label>
+							<label style={label}>Razão Social</label>
 							<input style={input} type='text' />
 						</div>
 						{/* NOME FANTASIA FIELD */}
 						<div style={field('nomeFantasia')}>
-							<label>Nome Fantasia</label>
+							<label style={label}>Nome Fantasia</label>
 							<input style={input} type='text' />
 						</div>
 						{/* ENDERECO FIELD */}
 						<div style={field('endereco')}>
-							<label>Endereço</label>
+							<label style={label}>Endereço</label>
 							<input style={input} type='text' />
 						</div>
 						{/* BAIRRO FIELD */}
 						<div style={field('bairro')}>
-							<label>Bairro</label>
+							<label style={label}>Bairro</label>
 							<input style={input} type='text' />
 						</div>
 						{/* CEP FIELD */}
 						<div style={field('cep')}>
-							<label>Cep</label>
+							<label style={label}>Cep</label>
 							<input style={input} type='text' />
 						</div>
 						{/* CIDADE FIELD */}
 						<div style={field('cidade')}>
-							<label>Cidade</label>
+							<label style={label}>Cidade</label>
 							<input style={input} type='text' />
 						</div>
 						{/* ESTADO FIELD */}
 						<div style={field('estado')}>
-							<label>Estado</label>
+							<label style={label}>Estado</label>
 							<input style={input} type='text' />
 						</div>
 						{/* FONE FIELD */}
 						<div style={field('fone')}>
-							<label>Fone</label>
+							<label style={label}>Fone</label>
 							<input style={input} type='text' />
 						</div>
 						{/* EMAIL FIELD */}
 						<div style={field('email')}>
-							<label>Email</label>
+							<label style={label}>Email</label>
 							<input style={input} type='text' />
 						</div>
 						{/* REFERENCIA FIELD */}
 						<div style={field('referencia')}>
-							<label>Referência</label>
+							<label style={label}>Referência</label>
 							<input style={input} type='text' />
 						</div>
 					</div>
 				</div>
 				<div style={assessoria}>
-					<div style={info}>
-						<p>Ziro</p>
+					<div style={panel}>
+						<div style={logo}>
+						  <Image
+					      cloudName='ziro'
+					      width='40'
+					      publicId='logo-round_kxn8sa'
+					      version='1508000699'
+					      format='png'
+					      secure='true'
+					    />
+						</div>
+						<div style={info('nome')}>
+							<label style={label}>Nome</label>
+							<span style={span}>Ziro Assessoria e Consultoria</span>
+						</div>
+						<div style={info('cnpj')}>
+							<label style={label}>CNPJ</label>
+							<span style={span}>13.275.070/0001-02</span>
+						</div>
+						<div style={info('endereco')}>
+							<label style={label}>Endereço</label>
+							<span style={span}>Rua Ribeiro de Lima, 453, Loja 173 - Bom Retiro</span>
+						</div>
+						<div style={info('cidade')}>
+							<label style={label}>Cidade - Estado</label>
+							<span style={span}>São Paulo - SP</span>
+						</div>
+						<div style={info('cep')}>
+							<label style={label}>Cep</label>
+							<span style={span}>01122-000</span>
+						</div>
+						<div style={info('fone')}>
+							<label style={label}>Fone</label>
+							<span style={span}>(11) 2737-0213</span>
+						</div>
+						<div style={info('celular1')}>
+							<label style={label}>Celular 1</label>
+							<span style={span}>(11) 99645-4922</span>
+						</div>
+						<div style={info('celular2')}>
+							<label style={label}>Celular 2</label>
+							<span style={span}>(11) 98292-1481</span>
+						</div>
+						<div style={info('email')}>
+							<label style={label}>Email</label>
+							<span style={span}>contato@ziromoda.com.br</span>
+						</div>
+						<div style={info('site')}>
+							<label style={label}>Site</label>
+							<span style={span}>ziromoda.com.br</span>
+						</div>
+						<div style={info('blog')}>
+							<label style={label}>Blog</label>
+							<span style={span}>ziromoda.com.br/ziroblog</span>
+						</div>
 					</div>
 				</div>
 			</div>

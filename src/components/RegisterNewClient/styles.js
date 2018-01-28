@@ -1,7 +1,16 @@
 export const grid = {
+	maxWidth: '1200px',
+	margin: '0 auto',
+	padding: '30px',
 	display: 'grid',
-	gridTemplate: `'lojista assessoria' auto / 1fr 1fr`,
+	gridTemplate: `'lojista assessoria' / 49% 49%`,
+	gridGap: '2%',
 	alignItems: 'center'
+}
+
+export const gridMobile = {
+	display: 'flex',
+	flexDirection: 'column'
 }
 
 export const lojista = {
@@ -15,32 +24,98 @@ export const assessoria = {
 export const form = {
 	display: 'grid',
 	gridTemplate: ` 
-		'lojista lojista'
-		'rg cpf'
-		'cnpj ie'
-		'razaoSocial razaoSocial'
-		'nomeFantasia nomeFantasia'
-		'endereco endereco'
-		'bairro cep'
-		'cidade estado'
-		'fone fone'
-		'email email'
-		'referencia referencia' / 1fr 1fr`
+		'nome nome rg cpf'
+		'cnpj cnpj ie ie'
+		'razaoSocial razaoSocial nomeFantasia nomeFantasia'
+		'endereco endereco endereco endereco'
+		'bairro cep cidade estado'
+		'fone email referencia referencia' / 25% 25% 25% 25%`,
+	padding: '2px',
+	border: '1px solid #f3f3f3',
+	borderRadius: '7px',
 }
 
-export const info = {
-
+export const panel = {
+	display: 'grid',
+	gridTemplate: `
+		'logo nome nome nome cnpj cnpj'
+		'celular1 celular1 celular1 celular2 celular2 celular2'
+		'fone fone fone email email email'
+		'site site site blog blog blog'
+		'endereco endereco endereco endereco endereco endereco'
+		'cidade cidade cidade cep cep cep'
+		 / 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%`,
+	padding: '2px',
+	border: '1px solid #f3f3f3',
+	borderRadius: '7px',
 }
 
-export const field = (gridName) => {
+export const field = (fieldName) => {
 	return {
-		gridArea: gridName,
+		gridArea: fieldName,
 		display: 'flex',
 		flexDirection: 'column',
-		border: '1px solid #f3f3f3'
+		margin: '3px',
+		padding: '6px 15px',
+		border: '1px solid #f3f3f3',
+		borderRadius: '7px'
 	}
 }
 
-export const input = {
-	border: 'none'
+export const info = (infoName) => {
+	return {
+		gridArea: infoName,
+		display: 'flex',
+		flexDirection: 'column',
+		margin: '2px',
+		padding: '6px 15px',
+		border: '1px solid #f3f3f3',
+		borderRadius: '7px'
+	}
 }
+
+export const label = {
+	marginBottom: '5px',
+	textTransform: 'uppercase'
+}
+
+export const input = {
+	border: 'none',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	textTransform: 'uppercase'
+}
+
+export const span = {
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	textTransform: 'uppercase'	
+}
+
+export const logo = {
+	gridArea: 'logo',
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+	margin: '2px',
+	padding: '6px 15px',
+	border: '1px solid #f3f3f3',
+	borderRadius: '7px'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
