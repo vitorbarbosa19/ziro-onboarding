@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Image } from 'cloudinary-react'
-import { grid, lojista, assessoria, form, panel, info, field, label, input, span, logo } from './styles'
+import { grid, title, lojista, assessoria, form, panel, info, field, label, input, span, logo } from './styles'
 
 export default class RegisterNewClient extends Component {
 	constructor(props) {
@@ -13,6 +13,7 @@ export default class RegisterNewClient extends Component {
 	render() {
 		return (
 			<div style={grid}>
+				<label style={title('titleLojista')}>Lojista</label>
 				<div style={lojista}>
 					<div style={form}>
 						{/* NOME FIELD */}
@@ -36,8 +37,8 @@ export default class RegisterNewClient extends Component {
 							<input style={input} type='text' />
 						</div>
 						{/* IE FIELD */}
-						<div style={field('ie')}>
-							<label style={label}>Ie</label>
+						<div style={field('inscricaoEstadual')}>
+							<label style={label}>Inscrição Estadual</label>
 							<input style={input} type='text' />
 						</div>
 						{/* RAZAO SOCIAL FIELD */}
@@ -66,13 +67,8 @@ export default class RegisterNewClient extends Component {
 							<input style={input} type='text' />
 						</div>
 						{/* CIDADE FIELD */}
-						<div style={field('cidade')}>
-							<label style={label}>Cidade</label>
-							<input style={input} type='text' />
-						</div>
-						{/* ESTADO FIELD */}
-						<div style={field('estado')}>
-							<label style={label}>Estado</label>
+						<div style={field('cidadeEstado')}>
+							<label style={label}>Cidade - Estado</label>
 							<input style={input} type='text' />
 						</div>
 						{/* FONE FIELD */}
@@ -92,12 +88,13 @@ export default class RegisterNewClient extends Component {
 						</div>
 					</div>
 				</div>
+				<label style={title('titleAssessoria')}>Assessoria</label>
 				<div style={assessoria}>
 					<div style={panel}>
 						<div style={logo}>
 						  <Image
 					      cloudName='ziro'
-					      width='40'
+					      width='35'
 					      publicId='logo-round_kxn8sa'
 					      version='1508000699'
 					      format='png'
@@ -106,7 +103,7 @@ export default class RegisterNewClient extends Component {
 						</div>
 						<div style={info('nome')}>
 							<label style={label}>Nome</label>
-							<span style={span}>Ziro Assessoria e Consultoria</span>
+							<span style={span}>Ziromoda Assessoria e Consultoria</span>
 						</div>
 						<div style={info('cnpj')}>
 							<label style={label}>CNPJ</label>
@@ -116,7 +113,7 @@ export default class RegisterNewClient extends Component {
 							<label style={label}>Endereço</label>
 							<span style={span}>Rua Ribeiro de Lima, 453, Loja 173 - Bom Retiro</span>
 						</div>
-						<div style={info('cidade')}>
+						<div style={info('cidadeEstado')}>
 							<label style={label}>Cidade - Estado</label>
 							<span style={span}>São Paulo - SP</span>
 						</div>
@@ -130,11 +127,11 @@ export default class RegisterNewClient extends Component {
 						</div>
 						<div style={info('celular1')}>
 							<label style={label}>Celular 1</label>
-							<span style={span}>(11) 99645-4922</span>
+							<span style={span}>(11) 99645-4922 [César]</span>
 						</div>
 						<div style={info('celular2')}>
 							<label style={label}>Celular 2</label>
-							<span style={span}>(11) 98292-1481</span>
+							<span style={span}>(11) 98292-1481 [Rúbia]</span>
 						</div>
 						<div style={info('email')}>
 							<label style={label}>Email</label>

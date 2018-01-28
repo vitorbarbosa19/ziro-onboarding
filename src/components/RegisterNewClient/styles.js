@@ -3,7 +3,10 @@ export const grid = {
 	margin: '0 auto',
 	padding: '30px',
 	display: 'grid',
-	gridTemplate: `'lojista assessoria' / 49% 49%`,
+	gridTemplate: `
+		'titleLojista titleAssessoria'
+		'lojista assessoria'
+		/ 49% 49%`,
 	gridGap: '2%',
 	alignItems: 'center'
 }
@@ -11,6 +14,18 @@ export const grid = {
 export const gridMobile = {
 	display: 'flex',
 	flexDirection: 'column'
+}
+
+export const title = (titleName) => {
+	return {
+		gridArea: titleName,
+		margin: '0 0 5px 3px',
+		textTransform: 'uppercase',
+		fontSize: '1.4rem',
+		fontFamily: 'Poppins',
+		fontWeight: '400',
+		color: '#303e4d'
+	}
 }
 
 export const lojista = {
@@ -23,16 +38,14 @@ export const assessoria = {
 
 export const form = {
 	display: 'grid',
-	gridTemplate: ` 
+	gridTemplate: `
 		'nome nome rg cpf'
-		'cnpj cnpj ie ie'
+		'cnpj cnpj inscricaoEstadual inscricaoEstadual'
 		'razaoSocial razaoSocial nomeFantasia nomeFantasia'
-		'endereco endereco endereco endereco'
-		'bairro cep cidade estado'
-		'fone email referencia referencia' / 25% 25% 25% 25%`,
-	padding: '2px',
-	border: '1px solid #f3f3f3',
-	borderRadius: '7px',
+		'endereco endereco endereco cep'
+		'bairro bairro cidadeEstado cidadeEstado'
+		'fone email email referencia'
+		/ 25% 25% 25% 25%`
 }
 
 export const panel = {
@@ -43,11 +56,8 @@ export const panel = {
 		'fone fone fone email email email'
 		'site site site blog blog blog'
 		'endereco endereco endereco endereco endereco endereco'
-		'cidade cidade cidade cep cep cep'
-		 / 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%`,
-	padding: '2px',
-	border: '1px solid #f3f3f3',
-	borderRadius: '7px',
+		'cidadeEstado cidadeEstado cidadeEstado cep cep cep'
+		/ 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%`
 }
 
 export const field = (fieldName) => {
@@ -58,7 +68,7 @@ export const field = (fieldName) => {
 		margin: '3px',
 		padding: '6px 15px',
 		border: '1px solid #f3f3f3',
-		borderRadius: '7px'
+		borderRadius: '3px'
 	}
 }
 
@@ -70,26 +80,33 @@ export const info = (infoName) => {
 		margin: '2px',
 		padding: '6px 15px',
 		border: '1px solid #f3f3f3',
-		borderRadius: '7px'
+		borderRadius: '3px'
 	}
 }
 
 export const label = {
 	marginBottom: '5px',
-	textTransform: 'uppercase'
+	textTransform: 'uppercase',
+	fontFamily: 'Poppins',
+	fontWeight: '300',
+	color: '#444'
 }
 
 export const input = {
 	border: 'none',
 	fontSize: '1.1rem',
 	fontWeight: '700',
-	textTransform: 'uppercase'
+	fontFamily: 'Karla',
+	textTransform: 'uppercase',
+	color: '#303e4d'
 }
 
 export const span = {
 	fontSize: '1.1rem',
 	fontWeight: '700',
-	textTransform: 'uppercase'	
+	fontFamily: 'Karla',
+	textTransform: 'uppercase',
+	color: '#303e4d'
 }
 
 export const logo = {
@@ -100,7 +117,7 @@ export const logo = {
 	margin: '2px',
 	padding: '6px 15px',
 	border: '1px solid #f3f3f3',
-	borderRadius: '7px'
+	borderRadius: '3px'
 }
 
 
