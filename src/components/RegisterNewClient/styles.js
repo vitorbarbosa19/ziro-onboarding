@@ -43,7 +43,7 @@ export const form = {
 		'cnpj cnpj inscricaoEstadual inscricaoEstadual'
 		'razaoSocial razaoSocial nomeFantasia nomeFantasia'
 		'endereco endereco endereco cep'
-		'bairro bairro cidadeEstado cidadeEstado'
+		'bairro bairro cidade-Estado cidade-Estado'
 		'fone email email referencia'
 		/ 25% 25% 25% 25%`
 }

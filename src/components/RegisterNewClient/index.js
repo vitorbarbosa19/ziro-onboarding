@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Image } from 'cloudinary-react'
+import Form from './components/Form'
 import { grid, title, lojista, assessoria, form, panel, info, field, label, input, span, logo } from './styles'
 
 export default class RegisterNewClient extends Component {
@@ -16,76 +17,7 @@ export default class RegisterNewClient extends Component {
 				<label style={title('titleLojista')}>Lojista</label>
 				<div style={lojista}>
 					<div style={form}>
-						{/* NOME FIELD */}
-						<div style={field('nome')}>
-							<label style={label}>Nome</label>
-							<input style={input} type='text' />
-						</div>
-						{/* RG FIELD */}
-						<div style={field('rg')}>
-							<label style={label}>Rg</label>
-							<input style={input} type='text' />
-						</div>
-						{/* CPF FIELD */}
-						<div style={field('cpf')}>
-							<label style={label}>Cpf</label>
-							<input style={input} type='text' />
-						</div>
-						{/* CNPJ FIELD */}
-						<div style={field('cnpj')}>
-							<label style={label}>Cnpj</label>
-							<input style={input} type='text' />
-						</div>
-						{/* IE FIELD */}
-						<div style={field('inscricaoEstadual')}>
-							<label style={label}>Inscrição Estadual</label>
-							<input style={input} type='text' />
-						</div>
-						{/* RAZAO SOCIAL FIELD */}
-						<div style={field('razaoSocial')}>
-							<label style={label}>Razão Social</label>
-							<input style={input} type='text' />
-						</div>
-						{/* NOME FANTASIA FIELD */}
-						<div style={field('nomeFantasia')}>
-							<label style={label}>Nome Fantasia</label>
-							<input style={input} type='text' />
-						</div>
-						{/* ENDERECO FIELD */}
-						<div style={field('endereco')}>
-							<label style={label}>Endereço</label>
-							<input style={input} type='text' />
-						</div>
-						{/* BAIRRO FIELD */}
-						<div style={field('bairro')}>
-							<label style={label}>Bairro</label>
-							<input style={input} type='text' />
-						</div>
-						{/* CEP FIELD */}
-						<div style={field('cep')}>
-							<label style={label}>Cep</label>
-							<input style={input} type='text' />
-						</div>
-						{/* CIDADE FIELD */}
-						<div style={field('cidadeEstado')}>
-							<label style={label}>Cidade - Estado</label>
-							<input style={input} type='text' />
-						</div>
-						{/* FONE FIELD */}
-						<div style={field('fone')}>
-							<label style={label}>Fone</label>
-							<input style={input} type='text' />
-						</div>
-						{/* EMAIL FIELD */}
-						<div style={field('email')}>
-							<label style={label}>Email</label>
-							<input style={input} type='text' />
-						</div>
-						{/* REFERENCIA FIELD */}
-						<div style={field('referencia')}>
-							<label style={label}>Referência</label>
-							<input style={input} type='text' />
-						</div>
+						<Form />
 					</div>
 				</div>
 				<label style={title('titleAssessoria')}>Assessoria</label>
