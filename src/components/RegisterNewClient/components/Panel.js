@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from 'cloudinary-react'
 import panelFields from '../utils/panelFields'
-import formatFieldToStyle from '../utils/formatFieldToStyle'
+import formatField from '../utils/formatField'
 import { panel, logo, info, label, span } from '../styles'
 
 const Panel = (props) => (
@@ -19,7 +19,7 @@ const Panel = (props) => (
 	  {
 			panelFields.map( (panelField, index) => {
 				return (
-					<div style={info(formatFieldToStyle(panelField.label))} key={index}>
+					<div style={info(formatField(panelField.label))} key={index}>
 						<label style={label}>{panelField.label}</label>
 						<span style={span}>{panelField.value}</span>
 					</div>

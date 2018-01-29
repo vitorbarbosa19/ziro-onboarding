@@ -1,7 +1,7 @@
 export default [
 	{
 		label: 'Nome',
-		value: 'Ziromoda Assessoria e Consultoria'
+		value: 'Ziro Assessoria e Consultoria'
 	},
 	{
 		label: 'Cnpj',

@@ -1,6 +1,6 @@
 import React from 'react'
 import formFields from '../utils/formFields'
-import formatFieldToStyle from '../utils/formatFieldToStyle'
+import formatField from '../utils/formatField'
 import { form, field, label, input } from '../styles'
 
 const Form = (props) => (
@@ -8,9 +8,14 @@ const Form = (props) => (
 		{
 			formFields.map( (formField, index) => {
 				return (
-					<div style={field(formatFieldToStyle(formField))} key={index}>
+					<div style={field(formatField(formField))} key={index}>
 						<label style={label}>{formField}</label>
-						<input style={input} type='text' />
+						<input
+							style={input}
+							value={props.fields[formatField(formField)]}
+							onChange={props.updateField(formatField(formField))}
+							type='text'
+						/>
 					</div>
 				)	
 			})

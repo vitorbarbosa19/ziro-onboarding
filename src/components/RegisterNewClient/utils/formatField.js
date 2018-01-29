@@ -1,5 +1,5 @@
 // finds and replaces all characters with latin accents using unicode
-const formatFieldToStyle = (fieldName) => {
+const formatField = (fieldName) => {
 	const noAccent = fieldName.toLowerCase().replace(/[\u00C0-\u00FF]/g, (char) => {
   	const unicode = char.charCodeAt(0).toString(16)
 	  if (/[ce][0-3]/.test(unicode))
@@ -15,7 +15,7 @@ const formatFieldToStyle = (fieldName) => {
 	  if (/[ce]7/.test(unicode))
 	    return 'c'
 	})
-	const camelCaseNoAccent = noAccent.split(' ').map( (word, index) => {
+	const camelCaseNoAccent = noAccent.replace('-','').split(' ').map( (word, index) => {
 	  if (index === 0)
 	    return word
 	  return word.split('').map( (char, index) => {
@@ -27,4 +27,4 @@ const formatFieldToStyle = (fieldName) => {
 	return camelCaseNoAccent
 }
 
-export default formatFieldToStyle
+export default formatField

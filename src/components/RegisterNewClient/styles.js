@@ -43,7 +43,7 @@ export const form = {
 		'cnpj cnpj inscricaoEstadual inscricaoEstadual'
 		'razaoSocial razaoSocial nomeFantasia nomeFantasia'
 		'endereco endereco endereco cep'
-		'bairro bairro cidade-Estado cidade-Estado'
+		'bairro bairro cidadeEstado cidadeEstado'
 		'fone email email referencia'
 		/ 25% 25% 25% 25%`
 }
@@ -56,7 +56,7 @@ export const panel = {
 		'fone fone fone email email email'
 		'site site site blog blog blog'
 		'endereco endereco endereco endereco endereco endereco'
-		'cidade-Estado cidade-Estado cidade-Estado cep cep cep'
+		'cidadeEstado cidadeEstado cidadeEstado cep cep cep'
 		/ 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%`
 }
 
