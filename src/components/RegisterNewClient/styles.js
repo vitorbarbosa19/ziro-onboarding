@@ -56,7 +56,7 @@ export const panel = {
 		'fone fone fone email email email'
 		'site site site blog blog blog'
 		'endereco endereco endereco endereco endereco endereco'
-		'cidadeEstado cidadeEstado cidadeEstado cep cep cep'
+		'cidade-Estado cidade-Estado cidade-Estado cep cep cep'
 		/ 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%`
 }
 

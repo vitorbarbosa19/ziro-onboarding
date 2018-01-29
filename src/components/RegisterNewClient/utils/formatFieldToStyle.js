@@ -1,3 +1,4 @@
+// finds and replaces all characters with latin accents using unicode
 const formatFieldToStyle = (fieldName) => {
 	const noAccent = fieldName.toLowerCase().replace(/[\u00C0-\u00FF]/g, (char) => {
   	const unicode = char.charCodeAt(0).toString(16)
