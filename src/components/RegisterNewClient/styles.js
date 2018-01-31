@@ -95,16 +95,16 @@ export const label = {
 export const input = {
 	border: 'none',
 	fontSize: '1.1rem',
-	fontWeight: '700',
-	fontFamily: 'Karla',
+	fontWeight: '600',
+	fontFamily: 'Work Sans',
 	textTransform: 'uppercase',
 	color: '#303e4d'
 }
 
 export const span = {
 	fontSize: '1.1rem',
-	fontWeight: '700',
-	fontFamily: 'Karla',
+	fontWeight: '600',
+	fontFamily: 'Work Sans',
 	textTransform: 'uppercase',
 	color: '#303e4d'
 }
