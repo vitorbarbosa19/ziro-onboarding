@@ -1,3 +1,7 @@
+export const container = {
+
+}
+
 export const grid = {
 	maxWidth: '1200px',
 	margin: '0 auto',
@@ -119,6 +123,79 @@ export const logo = {
 	border: '1px solid #f3f3f3',
 	borderRadius: '3px'
 }
+
+export const buttons = {
+	width: '80%',
+	margin: '0 auto',
+	display: 'flex',
+	justifyContent: 'center'
+}
+
+export const buttonData = {
+	WebkitAppearance: 'none',
+	MozAppearance: 'none',
+	margin: '0 5px',
+	width: '15rem',
+	border: 'none',
+	borderRadius: '20px',
+	padding: '8px 15px',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	fontFamily: 'Poppins',
+	color: '#FFF',
+	backgroundColor: 'rgba(48,62,77,0.8)'
+}
+
+export const buttonSubmit = {
+	WebkitAppearance: 'none',
+	MozAppearance: 'none',
+	margin: '0 5px',
+	width: '15rem',
+	border: 'none',
+	borderRadius: '20px',
+	padding: '8px 15px',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	fontFamily: 'Poppins',
+	color: '#FFF',
+	backgroundColor: '#4F86C6'
+}
+
+export const	buttonReset = {
+	WebkitAppearance: 'none',
+	MozAppearance: 'none',
+	margin: '0 5px',
+	width: '15rem',
+	border: '1px solid rgba(48,62,77,0.8)',
+	borderRadius: '20px',
+	padding: '8px 15px',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	fontFamily: 'Poppins',
+	color: 'rgba(48,62,77,0.8)',
+	backgroundColor: '#FFF'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
