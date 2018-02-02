@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import updateField from './methods/updateField'
+import fetchData from './methods/fetchData'
 import Form from './components/Form'
 import Panel from './components/Panel'
 import Buttons from './components/Buttons'
@@ -27,13 +27,14 @@ export default class RegisterNewClient extends Component {
 		}
 	}
 	updateField = updateField(this)
+	fetchData = fetchData(this)
 	render() {
 		return (
 			<div style={container}>
 				<div style={grid}>
 					<label style={title('titleLojista')}>Lojista</label>
 					<div style={lojista}>
-						<Form 
+						<Form
 							updateField={this.updateField}
 							fields={this.state}
 						/>
@@ -43,7 +44,9 @@ export default class RegisterNewClient extends Component {
 						<Panel />
 					</div>
 				</div>
-				<Buttons />
+				<Buttons
+					fetchData={this.fetchData}
+				/>
 			</div>
 		)
 	}

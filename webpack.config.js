@@ -33,9 +33,18 @@ const config = {
 			}
 		]
 	},
-	plugins: [
-		new HtmlWebpackPlugin({ template: './src/index.html' }),
-	]
+	plugins: [ new HtmlWebpackPlugin({ template: './src/index.html' }) ]
+}
+
+if (process.env.NODE_ENV !== 'production') {
+	const { backendUrl } = require('./credentials')
+	config.plugins.push(
+		new webpack.DefinePlugin({
+			'process.env': {
+				BACKEND_URL: JSON.stringify(backendUrl)
+			}
+		})
+	)
 }
 
 if (process.env.NODE_ENV === 'production') {
@@ -44,6 +53,7 @@ if (process.env.NODE_ENV === 'production') {
 		new webpack.optimize.ModuleConcatenationPlugin(),
 		new webpack.DefinePlugin({
 			'process.env': {
+				BACKEND_URL: JSON.stringify(process.env.BACKEND_URL),
 				NODE_ENV: JSON.stringify('production')
 			}
 		})
