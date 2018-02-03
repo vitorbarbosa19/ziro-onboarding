@@ -3,6 +3,7 @@ import { initialState, transition } from './utils/stateMachine'
 import updateField from './methods/updateField'
 import fetchData from './methods/fetchData'
 import fetchIE from './methods/fetchIE'
+import submit from './methods/submit'
 import Form from './components/Form'
 import Panel from './components/Panel'
 import Buttons from './components/Buttons'
@@ -51,6 +52,7 @@ export default class RegisterNewClient extends Component {
 	updateField = updateField(this)
 	fetchData = fetchData(this)
 	fetchIE = fetchIE(this)
+	submit = submit(this)
 	/* ------- */
 	render() {
 		return (
@@ -71,6 +73,7 @@ export default class RegisterNewClient extends Component {
 				<Buttons
 					fetchData={this.fetchData}
 					fetchIE={this.fetchIE}
+					submit={this.submit}
 				/>
 			</div>
 		)
