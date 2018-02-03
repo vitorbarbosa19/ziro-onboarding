@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import updateField from './methods/updateField'
 import fetchData from './methods/fetchData'
+import fetchIE from './methods/fetchIE'
 import Form from './components/Form'
 import Panel from './components/Panel'
 import Buttons from './components/Buttons'
@@ -10,6 +11,7 @@ export default class RegisterNewClient extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			/* FIELDS */
 			nome: '',
 			rg:'',
 			cpf: '',
@@ -28,6 +30,7 @@ export default class RegisterNewClient extends Component {
 	}
 	updateField = updateField(this)
 	fetchData = fetchData(this)
+	fetchIE = fetchIE(this)
 	render() {
 		return (
 			<div style={container}>
@@ -46,6 +49,7 @@ export default class RegisterNewClient extends Component {
 				</div>
 				<Buttons
 					fetchData={this.fetchData}
+					fetchIE={this.fetchIE}
 				/>
 			</div>
 		)

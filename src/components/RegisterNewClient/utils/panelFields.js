@@ -9,15 +9,15 @@ export default [
 	},
 	{
 		label: 'Celular 1',
-		value: '(11) 99645-4922 [César]'
+		value: '(11)99645-4922 [César]'
 	},
 	{
 		label: 'Celular 2',
-		value: '(11) 98292-1481 [Rúbia]'
+		value: '(11)98292-1481 [Rúbia]'
 	},
 	{
 		label: 'Fone',
-		value: '(11) 2737-0213'
+		value: '(11)2737-0213'
 	},
 	{
 		label: 'Email',
@@ -41,6 +41,6 @@ export default [
 	},
 	{
 		label: 'Cep',
-		value: '01122-000'
+		value: '01.122-000'
 	}
 ]
