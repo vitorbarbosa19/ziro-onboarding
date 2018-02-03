@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { initialState, transition } from './utils/stateMachine'
 import updateField from './methods/updateField'
 import fetchData from './methods/fetchData'
 import fetchIE from './methods/fetchIE'
@@ -11,6 +12,8 @@ export default class RegisterNewClient extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
+			/* UI INITIAL STATE */
+			uiState: initialState,
 			/* FIELDS */
 			nome: '',
 			rg:'',
@@ -25,12 +28,30 @@ export default class RegisterNewClient extends Component {
 			cidadeEstado: '',
 			fone: '',
 			email: '',
-			referencia: ''
+			referencia: '',
+			/* ERROR MESSAGES */
+			error_nome: '',
+			error_rg: '',
+			error_cpf: '',
+			error_cnpj: '',
+			error_inscricaoEstadual: '',
+			error_razaoSocial: '',
+			error_nomeFantasia: '',
+			error_endereco: '',
+			error_cep: '',
+			error_bairro: '',
+			error_cidadeEstado: '',
+			error_fone: '',
+			error_email: '',
+			error_referencia: '',
 		}
 	}
+	/* METHODS */
+	changeUiState = transition(this)
 	updateField = updateField(this)
 	fetchData = fetchData(this)
 	fetchIE = fetchIE(this)
+	/* ------- */
 	render() {
 		return (
 			<div style={container}>
