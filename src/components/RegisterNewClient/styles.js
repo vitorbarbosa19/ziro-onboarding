@@ -134,36 +134,26 @@ export const buttons = {
 export const buttonData = {
 	WebkitAppearance: 'none',
 	MozAppearance: 'none',
+	cursor: 'pointer',
+	outline: 'none',
 	margin: '0 5px',
 	width: '15rem',
-	border: 'none',
+	border: '1px solid rgba(48,62,77,0.8)',
 	borderRadius: '6px',
 	padding: '8px 15px',
 	fontSize: '1.1rem',
 	fontWeight: '700',
 	fontFamily: 'Poppins',
 	color: '#FFF',
-	backgroundColor: 'rgba(48,62,77,0.8)'
+	backgroundColor: 'rgba(48,62,77,0.8)',
+	transition: 'all ease 0.2s'
 }
 
-export const buttonSubmit = {
+export const buttonDataHover = {
 	WebkitAppearance: 'none',
 	MozAppearance: 'none',
-	margin: '0 5px',
-	width: '15rem',
-	border: 'none',
-	borderRadius: '6px',
-	padding: '8px 15px',
-	fontSize: '1.1rem',
-	fontWeight: '700',
-	fontFamily: 'Poppins',
-	color: '#FFF',
-	backgroundColor: '#4F86C6'
-}
-
-export const	buttonReset = {
-	WebkitAppearance: 'none',
-	MozAppearance: 'none',
+	cursor: 'pointer',
+	outline: 'none',
 	margin: '0 5px',
 	width: '15rem',
 	border: '1px solid rgba(48,62,77,0.8)',
@@ -173,10 +163,81 @@ export const	buttonReset = {
 	fontWeight: '700',
 	fontFamily: 'Poppins',
 	color: 'rgba(48,62,77,0.8)',
-	backgroundColor: '#FFF'
+	backgroundColor: '#FFF',
+	transition: 'all ease 0.2s'
 }
 
+export const buttonSubmit = {
+	WebkitAppearance: 'none',
+	MozAppearance: 'none',
+	cursor: 'pointer',
+	outline: 'none',
+	margin: '0 5px',
+	width: '15rem',
+	border: '1px solid #4F86C6',
+	borderRadius: '6px',
+	padding: '8px 15px',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	fontFamily: 'Poppins',
+	color: '#FFF',
+	backgroundColor: '#4F86C6',
+	transition: 'all ease 0.2s'
+}
 
+export const buttonSubmitHover = {
+	WebkitAppearance: 'none',
+	MozAppearance: 'none',
+	cursor: 'pointer',
+	outline: 'none',
+	margin: '0 5px',
+	width: '15rem',
+	border: '1px solid #4F86C6',
+	borderRadius: '6px',
+	padding: '8px 15px',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	fontFamily: 'Poppins',
+	color: '#4F86C6',
+	backgroundColor: '#FFF',
+	transition: 'all ease 0.2s'
+}
+
+export const	buttonReset = {
+	WebkitAppearance: 'none',
+	MozAppearance: 'none',
+	cursor: 'pointer',
+	outline: 'none',
+	margin: '0 5px',
+	width: '15rem',
+	border: '1px solid rgba(48,62,77,0.8)',
+	borderRadius: '6px',
+	padding: '8px 15px',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	fontFamily: 'Poppins',
+	color: 'rgba(48,62,77,0.8)',
+	backgroundColor: '#FFF',
+	transition: 'all ease 0.2s'
+}
+
+export const buttonResetHover = {
+	WebkitAppearance: 'none',
+	MozAppearance: 'none',
+	cursor: 'pointer',
+	outline: 'none',
+	margin: '0 5px',
+	width: '15rem',
+	border: '1px solid rgba(48,62,77,0.8)',
+	borderRadius: '6px',
+	padding: '8px 15px',
+	fontSize: '1.1rem',
+	fontWeight: '700',
+	fontFamily: 'Poppins',
+	color: '#FFF',
+	backgroundColor: 'rgba(48,62,77,0.8)',
+	transition: 'all ease 0.2s'
+}
 
 
 
