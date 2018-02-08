@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import Spinner from './Spinner'
 import { buttons, buttonData, buttonDataHover, buttonSubmit, buttonSubmitHover,
-	buttonReset, buttonResetHover } from '../styles'
+	buttonReset, buttonResetHover, spinner } from '../styles'
 
 export default class Buttons extends Component {
 	constructor(props) {
@@ -35,20 +36,32 @@ export default class Buttons extends Component {
 	render() {
 		return (
 			<div style={buttons}>
-				<button
-					style={this.state.dataButton1isHovered ? buttonDataHover : buttonData}
-					onClick={this.props.fetchData}
-					onMouseEnter={this.dataButton1toggleHover}
-					onMouseLeave={this.dataButton1toggleHover}>
-						Buscar dados
-				</button>
-				<button
-					style={this.state.dataButton2isHovered ? buttonDataHover : buttonData}
-					onClick={this.props.fetchIE}
-					onMouseEnter={this.dataButton2toggleHover}
-					onMouseLeave={this.dataButton2toggleHover}>
-						Buscar IE
-				</button>
+				{ this.props.uiState === 'fetching_data' ?
+						<div style={spinner}>
+							{Spinner(32,32)}
+						</div>
+					:
+						<button
+							style={this.state.dataButton1isHovered ? buttonDataHover : buttonData}
+							onClick={this.props.fetchData}
+							onMouseEnter={this.dataButton1toggleHover}
+							onMouseLeave={this.dataButton1toggleHover}>
+								Buscar dados
+						</button>
+				}
+				{ this.props.uiState === 'fetching_ie' ?
+						<div style={spinner}>
+							{Spinner(32,32)}
+						</div>
+					:
+						<button
+							style={this.state.dataButton2isHovered ? buttonDataHover : buttonData}
+							onClick={this.props.fetchIE}
+							onMouseEnter={this.dataButton2toggleHover}
+							onMouseLeave={this.dataButton2toggleHover}>
+								Buscar IE
+						</button>
+				}
 				<button
 					style={this.state.submitButtonisHovered ? buttonSubmitHover : buttonSubmit}
 					onClick={this.props.submit}

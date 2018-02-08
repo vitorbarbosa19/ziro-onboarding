@@ -3,8 +3,6 @@
 /* The states are also objects whose keys are actions and values are next states */
 
 const machine = {
-	mounting: { MOUNTING_OK: 'idle', MOUNTING_ERROR: 'errorMounting' },
-	errorMounting: { },
 	idle: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting' },
 	fetching_data: { FETCH_DATA_OK: 'idle', FETCH_DATA_ERROR: 'fetch_data_error' },
 	fetch_data_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting' },
@@ -14,7 +12,7 @@ const machine = {
 	submit_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting' }
 }
 
-export const initialState = 'mounting'
+export const initialState = 'idle'
 
 export const transition = (that) => (action) => {
 	that.setState( (prevState) => {

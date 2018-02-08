@@ -74,6 +74,7 @@ export default class RegisterNewClient extends Component {
 					fetchData={this.fetchData}
 					fetchIE={this.fetchIE}
 					submit={this.submit}
+					uiState={this.state.uiState}
 				/>
 			</div>
 		)

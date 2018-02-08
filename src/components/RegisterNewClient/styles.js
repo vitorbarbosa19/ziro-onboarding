@@ -98,6 +98,7 @@ export const label = {
 
 export const input = {
 	border: 'none',
+	outline: 'none',
 	fontSize: '1.1rem',
 	fontWeight: '600',
 	fontFamily: 'Work Sans',
@@ -239,7 +240,13 @@ export const buttonResetHover = {
 	transition: 'all ease 0.2s'
 }
 
-
+export const spinner = {
+	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
+	width: '15rem',
+	margin: '0 5px'
+}
 
 
 
