@@ -4,11 +4,12 @@ const fetchData = (that) => async () => {
 	that.changeUiState('FETCH_DATA')
 	try {
 		const { data: {error}, data: {values} } = await axios.get(`${process.env.BACKEND_URL}/business-info?cnpj=${that.state.cnpj}`)
+		console.log(values)
 		if (!error) {
 			that.setState({
 				razaoSocial: values.nome,
 				nomeFantasia: values.fantasia,
-				endereco: values.logradouro,
+				endereco: `${values.logradouro} ${values.numero} ${values.complemento}`,
 				cep: values.cep.replace(/\W+/g,''),
 				bairro: values.bairro,
 				cidadeEstado: `${values.municipio} - ${values.uf}`,
