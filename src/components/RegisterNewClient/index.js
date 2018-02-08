@@ -4,6 +4,7 @@ import updateField from './methods/updateField'
 import fetchData from './methods/fetchData'
 import fetchIE from './methods/fetchIE'
 import submit from './methods/submit'
+import reset from './methods/reset'
 import Form from './components/Form'
 import Panel from './components/Panel'
 import Buttons from './components/Buttons'
@@ -53,6 +54,7 @@ export default class RegisterNewClient extends Component {
 	fetchData = fetchData(this)
 	fetchIE = fetchIE(this)
 	submit = submit(this)
+	reset = reset(this)
 	/* ------- */
 	render() {
 		return (
@@ -74,6 +76,7 @@ export default class RegisterNewClient extends Component {
 					fetchData={this.fetchData}
 					fetchIE={this.fetchIE}
 					submit={this.submit}
+					reset={this.reset}
 					uiState={this.state.uiState}
 				/>
 			</div>

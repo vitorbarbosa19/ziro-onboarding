@@ -68,6 +68,7 @@ export default class Buttons extends Component {
 				</button>
 				<button
 					style={this.state.resetButtonIsHovered ? buttonResetHover : buttonReset}
+					onClick={this.buttonClicked.bind(null, this.props.reset)}
 					onMouseEnter={this.resetButtonEnter}
 					onMouseLeave={this.resetButtonLeave}>
 						Limpar
