@@ -9,29 +9,26 @@ export default class Buttons extends Component {
 		this.state = {
 			dataButton1isHovered: false,
 			dataButton2isHovered: false,
-			submitButtonisHovered: false,
-			resetButtonisHovered: false
+			submitButtonIsHovered: false,
+			resetButtonIsHovered: false
 		}
 	}
-	dataButton1toggleHover = () => {
-		this.setState( (prevState) => {
-			return { dataButton1isHovered: !prevState.dataButton1isHovered}
+	dataButton1Enter = () => this.setState({ dataButton1isHovered: true })
+	dataButton1Leave = () => this.setState({ dataButton1isHovered: false })
+	dataButton2Enter = () => this.setState({ dataButton2isHovered: true })
+	dataButton2Leave = () => this.setState({ dataButton2isHovered: false })
+	submitButtonEnter = () => this.setState({ submitButtonIsHovered: true })
+	submitButtonLeave = () => this.setState({ submitButtonIsHovered: false })
+	resetButtonEnter = () => this.setState({ resetButtonIsHovered: true })
+	resetButtonLeave = () => this.setState({ resetButtonIsHovered: false })
+	buttonClicked = (handlerFromParent) => {
+		this.setState({
+			dataButton1isHovered: false,
+			dataButton2isHovered: false,
+			submitButtonIsHovered: false,
+			resetButtonIsHovered: false
 		})
-	}
-	dataButton2toggleHover = () => {
-		this.setState( (prevState) => {
-			return { dataButton2isHovered: !prevState.dataButton2isHovered}
-		})
-	}
-	submitButtontoggleHover = () => {
-		this.setState( (prevState) => {
-			return { submitButtonisHovered: !prevState.submitButtonisHovered}
-		})
-	}
-	resetButtontoggleHover = () => {
-		this.setState( (prevState) => {
-			return { resetButtonisHovered: !prevState.resetButtonisHovered}
-		})
+		handlerFromParent()
 	}
 	render() {
 		return (
@@ -43,9 +40,9 @@ export default class Buttons extends Component {
 					:
 						<button
 							style={this.state.dataButton1isHovered ? buttonDataHover : buttonData}
-							onClick={this.props.fetchData}
-							onMouseEnter={this.dataButton1toggleHover}
-							onMouseLeave={this.dataButton1toggleHover}>
+							onClick={this.buttonClicked.bind(null, this.props.fetchData)}
+							onMouseEnter={this.dataButton1Enter}
+							onMouseLeave={this.dataButton1Leave}>
 								Buscar dados
 						</button>
 				}
@@ -56,23 +53,23 @@ export default class Buttons extends Component {
 					:
 						<button
 							style={this.state.dataButton2isHovered ? buttonDataHover : buttonData}
-							onClick={this.props.fetchIE}
-							onMouseEnter={this.dataButton2toggleHover}
-							onMouseLeave={this.dataButton2toggleHover}>
+							onClick={this.buttonClicked.bind(null, this.props.fetchIE)}
+							onMouseEnter={this.dataButton2Enter}
+							onMouseLeave={this.dataButton2Leave}>
 								Buscar IE
 						</button>
 				}
 				<button
-					style={this.state.submitButtonisHovered ? buttonSubmitHover : buttonSubmit}
-					onClick={this.props.submit}
-					onMouseEnter={this.submitButtontoggleHover}
-					onMouseLeave={this.submitButtontoggleHover}>
+					style={this.state.submitButtonIsHovered ? buttonSubmitHover : buttonSubmit}
+					onClick={this.buttonClicked.bind(null, this.props.submit)}
+					onMouseEnter={this.submitButtonEnter}
+					onMouseLeave={this.submitButtonLeave}>
 						Enviar
 				</button>
 				<button
-					style={this.state.resetButtonisHovered ? buttonResetHover : buttonReset}
-					onMouseEnter={this.resetButtontoggleHover}
-					onMouseLeave={this.resetButtontoggleHover}>
+					style={this.state.resetButtonIsHovered ? buttonResetHover : buttonReset}
+					onMouseEnter={this.resetButtonEnter}
+					onMouseLeave={this.resetButtonLeave}>
 						Limpar
 				</button>
 			</div>
