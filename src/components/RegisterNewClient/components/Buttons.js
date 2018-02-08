@@ -59,13 +59,19 @@ export default class Buttons extends Component {
 								Buscar IE
 						</button>
 				}
-				<button
-					style={this.state.submitButtonIsHovered ? buttonSubmitHover : buttonSubmit}
-					onClick={this.buttonClicked.bind(null, this.props.submit)}
-					onMouseEnter={this.submitButtonEnter}
-					onMouseLeave={this.submitButtonLeave}>
-						Enviar
-				</button>
+				{ this.props.uiState === 'submitting' ?
+						<div style={spinner}>
+							{Spinner(32,32)}
+						</div>
+					:
+						<button
+							style={this.state.submitButtonIsHovered ? buttonSubmitHover : buttonSubmit}
+							onClick={this.buttonClicked.bind(null, this.props.submit)}
+							onMouseEnter={this.submitButtonEnter}
+							onMouseLeave={this.submitButtonLeave}>
+								Enviar
+						</button>
+				}
 				<button
 					style={this.state.resetButtonIsHovered ? buttonResetHover : buttonReset}
 					onClick={this.buttonClicked.bind(null, this.props.reset)}

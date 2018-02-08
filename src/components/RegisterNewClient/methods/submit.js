@@ -11,14 +11,15 @@ const submit = (that) => async () => {
 	const cidadeEstadoIsValid = Boolean(that.state.cidadeEstado)
 	const foneIsValid = that.state.fone.length === 11 || that.state.fone.length === 10
 	const emailIsValid = Boolean(that.state.email)
-
 	if (nomeIsValid && cpfIsValid && cnpjIsValid && razaoSocialIsValid && enderecoIsValid &&
 				cepIsValid && bairroIsValid && cidadeEstadoIsValid && foneIsValid && emailIsValid) {
+		that.changeUiState('SUBMIT')
 		try {
 			const result = await axios.get(`${process.env.BACKEND_URL}/submit?
 				lojista=${that.state.nome}&
 				rg=${that.state.rg}&
 				cpf=${that.state.cpf}&
+				cnpj=${that.state.cnpj}&
 				ie=${that.state.inscricaoEstadual}&
 				razaoSocial=${that.state.razaoSocial}&
 				nomeFantasia=${that.state.nomeFantasia}&
@@ -30,18 +31,21 @@ const submit = (that) => async () => {
 				fone=${that.state.fone}&
 				email=${that.state.email}&
 				referencia=${that.state.referencia}`)
-			if (result === 'SUCCESS')
+			if (result.data === 'SUCCESS') {
+				console.log(result.data)
+				that.changeUiState('SUBMIT_OK')
+			} else {
 				console.log(result)
-			else
-				console.log(result)
+				that.changeUiState('SUBMIT_ERROR')
+			}
 		} catch (error) {
 			console.log(error)
+			that.changeUiState('SUBMIT_ERROR')
 		}	
 	}
 }
 
 export default submit
-
 
 /*
 			nome: '',
