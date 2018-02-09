@@ -248,6 +248,16 @@ export const spinner = {
 	margin: '0 5px'
 }
 
+export const errors = {
+	display: 'flex',
+	flexDirection: 'column',
+	alignItems: 'center',
+	marginTop: '20px',
+	fontSize: '1.3rem',
+	fontWeight: '700',
+	color: '#F16B6F'
+}
+
 
 
 

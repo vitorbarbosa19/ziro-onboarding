@@ -43,38 +43,46 @@ const submit = (that) => async () => {
 			that.changeUiState('SUBMIT_ERROR')
 		}	
 	}
+	nomeIsValid ?
+		that.setState({ error_nome: '' })
+	:
+		that.setState({ error_nome: 'Erro Campo Nome: Preencha esse campo' })
+	cpfIsValid ?
+		that.setState({ error_cpf: '' })
+	:
+		that.setState({ error_cpf: 'Erro Campo CPF: Deve ter 11 dígitos' })
+	cnpjIsValid ?
+		that.setState({ error_cnpj: '' })
+	:
+		that.setState({ error_cnpj: 'Erro Campo CNPJ: Deve ter 14 dígitos' })
+	razaoSocialIsValid ?
+		that.setState({ error_razaoSocial: '' })
+	:
+		that.setState({ error_razaoSocial: 'Erro Campo Razão Social: Preencha esse campo' })
+	enderecoIsValid ?
+		that.setState({ error_endereco: '' })
+	:
+		that.setState({ error_endereco: 'Erro Campo Endereço: Preencha esse campo' })
+	cepIsValid ?
+		that.setState({ error_cep: '' })
+	:
+		that.setState({ error_cep: 'Erro Campo CEP: Preencha esse campo' })
+	bairroIsValid ?
+		that.setState({ error_bairro: '' })
+	:
+		that.setState({ error_bairro: 'Erro Campo Bairro: Preencha esse campo' })
+	cidadeEstadoIsValid ?
+		that.setState({ error_cidadeEstado: '' })
+	:
+		that.setState({ error_cidadeEstado: 'Erro Campo Cidade - Estado: Preencha esse campo' })
+	foneIsValid ?
+		that.setState({ error_fone: '' })
+	:
+		that.setState({ error_fone: 'Erro Campo Fone: Deve ter 10 ou 11 dígitos' })
+	emailIsValid ?
+		that.setState({ error_email: '' })
+	:
+		that.setState({ error_email: 'Erro Campo Email: Preencha esse campo' })
 }
 
 export default submit
-
-/*
-			nome: '',
-			rg:'',
-			cpf: '',
-			cnpj: '',
-			inscricaoEstadual: '',
-			razaoSocial: '',
-			nomeFantasia: '',
-			endereco: '',
-			cep: '',
-			bairro: '',
-			cidadeEstado: '',
-			fone: '',
-			email: '',
-			referencia: '',
-			-------------
-			error_nome: '',
-			error_rg: '',
-			error_cpf: '',
-			error_cnpj: '',
-			error_inscricaoEstadual: '',
-			error_razaoSocial: '',
-			error_nomeFantasia: '',
-			error_endereco: '',
-			error_cep: '',
-			error_bairro: '',
-			error_cidadeEstado: '',
-			error_fone: '',
-			error_email: '',
-			error_referencia: '',
-*/

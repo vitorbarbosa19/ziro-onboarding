@@ -8,6 +8,7 @@ import reset from './methods/reset'
 import Form from './components/Form'
 import Panel from './components/Panel'
 import Buttons from './components/Buttons'
+import Errors from './components/Errors'
 import { container, grid, title, lojista, assessoria } from './styles'
 
 export default class RegisterNewClient extends Component {
@@ -78,6 +79,9 @@ export default class RegisterNewClient extends Component {
 					submit={this.submit}
 					reset={this.reset}
 					uiState={this.state.uiState}
+				/>
+				<Errors
+					errors={this.state}
 				/>
 			</div>
 		)
