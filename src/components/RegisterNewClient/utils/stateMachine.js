@@ -16,6 +16,8 @@ export const initialState = 'idle'
 
 export const transition = (that) => (action) => {
 	that.setState( (prevState) => {
-		return { uiState: machine[prevState.uiState][action] }
+		if (machine[prevState.uiState][action])
+			return { uiState: machine[prevState.uiState][action] }
+		return { uiState: prevState.uiState } 
 	})
 }

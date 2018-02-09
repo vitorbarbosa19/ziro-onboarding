@@ -13,7 +13,6 @@ const Errors = (props) => (
 		{	props.errors.error_bairro ? <span style={{padding: '5px', display: 'flex', alignItems: 'center'}}>{Alert(14,14)}&nbsp;{props.errors.error_bairro}</span> : null }
 		{	props.errors.error_cidadeEstado ? <span style={{padding: '5px', display: 'flex', alignItems: 'center'}}>{Alert(14,14)}&nbsp;{props.errors.error_cidadeEstado}</span> : null }
 		{	props.errors.error_fone ? <span style={{padding: '5px', display: 'flex', alignItems: 'center'}}>{Alert(14,14)}&nbsp;{props.errors.error_fone}</span> : null }
-		{	props.errors.error_email ? <span style={{padding: '5px', display: 'flex', alignItems: 'center'}}>{Alert(14,14)}&nbsp;{props.errors.error_email}</span> : null }
 	</div>
 )
 

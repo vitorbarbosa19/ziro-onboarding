@@ -34,19 +34,14 @@ export default class RegisterNewClient extends Component {
 			referencia: '',
 			/* ERROR MESSAGES */
 			error_nome: '',
-			error_rg: '',
 			error_cpf: '',
 			error_cnpj: '',
-			error_inscricaoEstadual: '',
 			error_razaoSocial: '',
-			error_nomeFantasia: '',
 			error_endereco: '',
 			error_cep: '',
 			error_bairro: '',
 			error_cidadeEstado: '',
-			error_fone: '',
-			error_email: '',
-			error_referencia: '',
+			error_fone: ''
 		}
 	}
 	/* METHODS */

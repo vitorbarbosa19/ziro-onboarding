@@ -8,11 +8,10 @@ const submit = (that) => async () => {
 	const enderecoIsValid = Boolean(that.state.endereco)
 	const cepIsValid = Boolean(that.state.cep)
 	const bairroIsValid = Boolean(that.state.bairro)
-	const cidadeEstadoIsValid = Boolean(that.state.cidadeEstado)
+	const cidadeEstadoIsValid = that.state.cidadeEstado.includes(' - ')
 	const foneIsValid = that.state.fone.length === 11 || that.state.fone.length === 10
-	const emailIsValid = Boolean(that.state.email)
 	if (nomeIsValid && cpfIsValid && cnpjIsValid && razaoSocialIsValid && enderecoIsValid &&
-				cepIsValid && bairroIsValid && cidadeEstadoIsValid && foneIsValid && emailIsValid) {
+				cepIsValid && bairroIsValid && cidadeEstadoIsValid && foneIsValid) {
 		that.changeUiState('SUBMIT')
 		try {
 			const result = await axios.get(`${process.env.BACKEND_URL}/submit?
@@ -46,43 +45,39 @@ const submit = (that) => async () => {
 	nomeIsValid ?
 		that.setState({ error_nome: '' })
 	:
-		that.setState({ error_nome: 'Erro Campo Nome: Preencha esse campo' })
+		that.setState({ error_nome: 'Nome: Preencha esse campo' })
 	cpfIsValid ?
 		that.setState({ error_cpf: '' })
 	:
-		that.setState({ error_cpf: 'Erro Campo CPF: Deve ter 11 dígitos' })
+		that.setState({ error_cpf: 'CPF: Deve ter 11 dígitos' })
 	cnpjIsValid ?
 		that.setState({ error_cnpj: '' })
 	:
-		that.setState({ error_cnpj: 'Erro Campo CNPJ: Deve ter 14 dígitos' })
+		that.setState({ error_cnpj: 'CNPJ: Deve ter 14 dígitos' })
 	razaoSocialIsValid ?
 		that.setState({ error_razaoSocial: '' })
 	:
-		that.setState({ error_razaoSocial: 'Erro Campo Razão Social: Preencha esse campo' })
+		that.setState({ error_razaoSocial: 'Razão Social: Preencha esse campo' })
 	enderecoIsValid ?
 		that.setState({ error_endereco: '' })
 	:
-		that.setState({ error_endereco: 'Erro Campo Endereço: Preencha esse campo' })
+		that.setState({ error_endereco: 'Endereço: Preencha esse campo' })
 	cepIsValid ?
 		that.setState({ error_cep: '' })
 	:
-		that.setState({ error_cep: 'Erro Campo CEP: Preencha esse campo' })
+		that.setState({ error_cep: 'CEP: Preencha esse campo' })
 	bairroIsValid ?
 		that.setState({ error_bairro: '' })
 	:
-		that.setState({ error_bairro: 'Erro Campo Bairro: Preencha esse campo' })
+		that.setState({ error_bairro: 'Bairro: Preencha esse campo' })
 	cidadeEstadoIsValid ?
 		that.setState({ error_cidadeEstado: '' })
 	:
-		that.setState({ error_cidadeEstado: 'Erro Campo Cidade - Estado: Preencha esse campo' })
+		that.setState({ error_cidadeEstado: 'Cidade - Estado: Preencha e coloque "-" entre a cidade e o estado' })
 	foneIsValid ?
 		that.setState({ error_fone: '' })
 	:
-		that.setState({ error_fone: 'Erro Campo Fone: Deve ter 10 ou 11 dígitos' })
-	emailIsValid ?
-		that.setState({ error_email: '' })
-	:
-		that.setState({ error_email: 'Erro Campo Email: Preencha esse campo' })
+		that.setState({ error_fone: 'Fone: Deve ter 10 ou 11 dígitos' })
 }
 
 export default submit
