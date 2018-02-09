@@ -1,7 +1,3 @@
-export const container = {
-
-}
-
 export const grid = {
 	maxWidth: '1200px',
 	margin: '0 auto',
@@ -89,6 +85,8 @@ export const info = (infoName) => {
 }
 
 export const label = {
+	display: 'flex',
+	alignItems: 'center',
 	marginBottom: '5px',
 	textTransform: 'uppercase',
 	fontFamily: 'Poppins',
@@ -258,36 +256,8 @@ export const errors = {
 	color: '#F16B6F'
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export const errorMessage = {
+	padding: '5px',
+	display: 'flex',
+	alignItems: 'center'
+}

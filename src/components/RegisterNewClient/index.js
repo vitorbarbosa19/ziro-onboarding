@@ -9,7 +9,7 @@ import Form from './components/Form'
 import Panel from './components/Panel'
 import Buttons from './components/Buttons'
 import Errors from './components/Errors'
-import { container, grid, title, lojista, assessoria } from './styles'
+import { grid, title, lojista, assessoria } from './styles'
 
 export default class RegisterNewClient extends Component {
 	constructor(props) {
@@ -54,7 +54,7 @@ export default class RegisterNewClient extends Component {
 	/* ------- */
 	render() {
 		return (
-			<div style={container}>
+			<div>
 				<div style={grid}>
 					<label style={title('titleLojista')}>Lojista</label>
 					<div style={lojista}>

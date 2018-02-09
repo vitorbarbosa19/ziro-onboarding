@@ -2,6 +2,7 @@ import React from 'react'
 import formFields from '../utils/formFields'
 import formatField from '../utils/formatField'
 import toCamelCaseNoAccent from '../utils/toCamelCaseNoAccent'
+import Alert from './Alert'
 import { form, field, label, input } from '../styles'
 
 const Form = (props) => (
@@ -11,7 +12,9 @@ const Form = (props) => (
 				const fieldName = toCamelCaseNoAccent(formField)
 				return (
 					<div style={field(fieldName)} key={index}>
-						<label style={label}>{formField}</label>
+						<label style={label}>
+							{props.fields[`error_${fieldName}`] && Alert(13,13)}&nbsp;{formField}
+						</label>
 						<input
 							style={input}
 							value={formatField(fieldName, props.fields[fieldName])}
