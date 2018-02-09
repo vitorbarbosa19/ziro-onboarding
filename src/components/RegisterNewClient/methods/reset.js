@@ -23,8 +23,11 @@ const reset = (that) => () => {
 		error_bairro: '',
 		error_cidadeEstado: '',
 		error_fone: '',
+		error_data: '',
+		error_ie: '',
 		submit_message: ''
 	})
+	that.changeUiState('RESET')
 }
 
 export default reset

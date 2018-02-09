@@ -42,6 +42,8 @@ export default class RegisterNewClient extends Component {
 			error_bairro: '',
 			error_cidadeEstado: '',
 			error_fone: '',
+			error_data: '',
+			error_ie: '',
 			/* SUBMIT MESSAGE */
 			submit_message: ''
 		}

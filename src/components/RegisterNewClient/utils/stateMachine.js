@@ -5,11 +5,11 @@
 const machine = {
 	idle: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting' },
 	fetching_data: { FETCH_DATA_OK: 'idle', FETCH_DATA_ERROR: 'fetch_data_error' },
-	fetch_data_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting' },
+	fetch_data_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting', RESET: 'idle' },
 	fetching_ie: { FETCH_IE_OK: 'idle', FETCH_IE_ERROR: 'fetch_ie_error' },
-	fetch_ie_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting' },
+	fetch_ie_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting', RESET: 'idle' },
 	submitting: { SUBMIT_OK: 'idle', SUBMIT_ERROR: 'submit_error' },
-	submit_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting' }
+	submit_error: { FETCH_DATA: 'fetching_data', FETCH_IE: 'fetching_ie', SUBMIT: 'submitting', RESET: 'idle' }
 }
 
 export const initialState = 'idle'

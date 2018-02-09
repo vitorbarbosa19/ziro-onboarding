@@ -5,6 +5,8 @@ import { errors, errorMessage, submitMessage } from '../styles'
 const Errors = (props) => (
 	<div style={errors}>
 		{props.errors.submit_message && <span style={submitMessage}>{props.errors.submit_message}</span>}
+		{props.errors.error_data && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_data}</span>}
+		{props.errors.error_ie && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_ie}</span>}
 		{props.errors.error_nome && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_nome}</span>}
 		{props.errors.error_cpf && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_cpf}</span>}
 		{props.errors.error_cnpj && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_cnpj}</span>}
