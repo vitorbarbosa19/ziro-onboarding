@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const submit = (that) => async () => {
+	that.setState({ submit_message: '' })
 	const nomeIsValid = Boolean(that.state.nome)
 	const cpfIsValid = that.state.cpf.length === 0 || that.state.cpf.length === 11
 	const cnpjIsValid = that.state.cnpj.length === 14
@@ -33,13 +34,16 @@ const submit = (that) => async () => {
 			if (result.data === 'SUCCESS') {
 				console.log(result.data)
 				that.changeUiState('SUBMIT_OK')
+				that.setState({ submit_message: 'Dados enviados com sucesso!' })
 			} else {
 				console.log(result)
 				that.changeUiState('SUBMIT_ERROR')
+				that.setState({ submit_message: 'Erro no envio de dados. Tente novamente mais tarde.' })
 			}
 		} catch (error) {
 			console.log(error)
 			that.changeUiState('SUBMIT_ERROR')
+			that.setState({ submit_message: 'Erro no envio de dados. Tente novamente mais tarde.' })
 		}	
 	}
 	nomeIsValid ?

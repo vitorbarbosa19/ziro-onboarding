@@ -14,6 +14,16 @@ const reset = (that) => () => {
 		fone: '',
 		email: '',
 		referencia: '',
+		error_nome: '',
+		error_cpf: '',
+		error_cnpj: '',
+		error_razaoSocial: '',
+		error_endereco: '',
+		error_cep: '',
+		error_bairro: '',
+		error_cidadeEstado: '',
+		error_fone: '',
+		submit_message: ''
 	})
 }
 

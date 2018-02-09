@@ -252,11 +252,17 @@ export const errors = {
 	alignItems: 'center',
 	marginTop: '20px',
 	fontSize: '1.3rem',
-	fontWeight: '700',
-	color: '#F16B6F'
+	fontWeight: '700'
 }
 
 export const errorMessage = {
+	padding: '5px',
+	display: 'flex',
+	alignItems: 'center',
+	color: '#F16B6F'
+}
+
+export const submitMessage = {
 	padding: '5px',
 	display: 'flex',
 	alignItems: 'center'
