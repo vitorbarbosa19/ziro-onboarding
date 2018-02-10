@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const submit = (that) => async () => {
-	that.setState({ submit_message: '' })
+	that.setState({ submit_message: '', error_data: '', error_ie: '' })
 	const nomeIsValid = Boolean(that.state.nome)
 	const cpfIsValid = that.state.cpf.length === 0 || that.state.cpf.length === 11
 	const cnpjIsValid = that.state.cnpj.length === 14
