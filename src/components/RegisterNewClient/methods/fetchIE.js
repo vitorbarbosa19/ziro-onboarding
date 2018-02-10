@@ -6,7 +6,7 @@ const fetchIE = (that) => async () => {
 		that.setState({ error_cnpj: '' })
 		try {
 			const { data: {error}, data: {values} } = await axios.get(`${process.env.BACKEND_URL}/inscricao-estadual?cnpj=${that.state.cnpj}`)
-			if (!error) {
+			if (!error && values !== 'Nenhum estabelecimento encontrado.') {
 				that.setState({ inscricaoEstadual: values })
 				that.changeUiState('FETCH_IE_OK')
 			}
