@@ -46,18 +46,19 @@ export default class Buttons extends Component {
 								Buscar dados
 						</button>
 				}
-				{ this.props.uiState === 'fetching_ie' ?
-						<div style={spinner}>
-							{Spinner(32,32)}
-						</div>
-					:
-						<button
-							style={this.state.dataButton2isHovered ? buttonDataHover : buttonData}
-							onClick={this.buttonClicked.bind(null, this.props.fetchIE)}
-							onMouseEnter={this.dataButton2Enter}
-							onMouseLeave={this.dataButton2Leave}>
-								Buscar IE
-						</button>
+				{ // this.props.uiState === 'fetching_ie' ?
+				// 		<div style={spinner}>
+				// 			{Spinner(32,32)}
+				// 		</div>
+				// 	:
+				// 		<button
+				// 			style={this.state.dataButton2isHovered ? buttonDataHover : buttonData}
+				// 			onClick={this.buttonClicked.bind(null, this.props.fetchIE)}
+				// 			onMouseEnter={this.dataButton2Enter}
+				// 			onMouseLeave={this.dataButton2Leave}>
+				// 				Buscar IE
+				// 		</button>
+				// }
 				}
 				{ this.props.uiState === 'submitting' ?
 						<div style={spinner}>

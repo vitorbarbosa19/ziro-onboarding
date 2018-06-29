@@ -3,7 +3,7 @@ import axios from 'axios'
 const fetchIE = (that) => async () => {
 	if (that.state.cnpj.length === 14) {
 		that.changeUiState('FETCH_IE')
-		that.setState({ error_cnpj: '' })
+		that.setState({ error_cnpj: '', submit_message: '' })
 		try {
 			const { data: {error}, data: {values} } = await axios.get(`${process.env.BACKEND_URL}/inscricao-estadual?cnpj=${that.state.cnpj}`)
 			if (!error && values !== 'Nenhum estabelecimento encontrado.') {
@@ -21,7 +21,7 @@ const fetchIE = (that) => async () => {
 			that.setState({ error_ie: 'Ocorreu um erro no sistema. Tente novamente mais tarde' })
 		}
 	} else {
-		that.setState({ error_cnpj: 'CNPJ: Deve ter 14 dígitos' })
+		that.setState({ error_cnpj: 'CNPJ: Deve ter 14 dígitos', submit_message: '' })
 	}
 }
 

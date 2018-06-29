@@ -16,15 +16,15 @@ const submit = (that) => async () => {
 		that.changeUiState('SUBMIT')
 		try {
 			const result = await axios.get(`${process.env.BACKEND_URL}/submit?
-				lojista=${that.state.nome}&
+				lojista=${that.state.nome.toUpperCase().trim()}&
 				rg=${that.state.rg}&
 				cpf=${that.state.cpf}&
 				cnpj=${that.state.cnpj}&
 				ie=${that.state.inscricaoEstadual}&
-				razaoSocial=${that.state.razaoSocial}&
-				nomeFantasia=${that.state.nomeFantasia}&
-				endereco=${that.state.endereco}&
-				bairro=${that.state.bairro}&
+				razaoSocial=${that.state.razaoSocial.toUpperCase().trim()}&
+				nomeFantasia=${that.state.nomeFantasia.toUpperCase().trim()}&
+				endereco=${that.state.endereco.toUpperCase().trim()}&
+				bairro=${that.state.bairro.toUpperCase().trim()}&
 				cep=${that.state.cep}&
 				cidade=${that.state.cidadeEstado.split('-')[0].trim()}&
 				estado=${that.state.cidadeEstado.split('-')[1].trim()}&
@@ -34,7 +34,35 @@ const submit = (that) => async () => {
 			if (result.data === 'SUCCESS') {
 				console.log(result.data)
 				that.changeUiState('SUBMIT_OK')
-				that.setState({ submit_message: 'Dados enviados com sucesso!' })
+				that.setState({
+					nome: '',
+					rg:'',
+					cpf: '',
+					cnpj: '',
+					inscricaoEstadual: '',
+					razaoSocial: '',
+					nomeFantasia: '',
+					endereco: '',
+					cep: '',
+					bairro: '',
+					cidadeEstado: '',
+					fone: '',
+					email: '',
+					referencia: '',
+					error_nome: '',
+					error_cpf: '',
+					error_cnpj: '',
+					error_razaoSocial: '',
+					error_endereco: '',
+					error_cep: '',
+					error_bairro: '',
+					error_cidadeEstado: '',
+					error_fone: '',
+					error_data: '',
+					error_ie: '',
+					submit_message: 'Dados enviados com sucesso!'
+				})
+				that.changeUiState('RESET')
 			} else {
 				console.log(result)
 				that.changeUiState('SUBMIT_ERROR')
