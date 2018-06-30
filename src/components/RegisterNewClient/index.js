@@ -36,6 +36,7 @@ export default class RegisterNewClient extends Component {
 			error_nome: '',
 			error_cpf: '',
 			error_cnpj: '',
+			error_cnpj_duplicate: '',
 			error_razaoSocial: '',
 			error_endereco: '',
 			error_cep: '',

@@ -17,6 +17,7 @@ const reset = (that) => () => {
 		error_nome: '',
 		error_cpf: '',
 		error_cnpj: '',
+		error_cnpj_duplicate: '',
 		error_razaoSocial: '',
 		error_endereco: '',
 		error_cep: '',

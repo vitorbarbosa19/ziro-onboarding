@@ -1,10 +1,12 @@
 import axios from 'axios'
+import notDuplicate from '../utils/notDuplicate'
 
 const submit = (that) => async () => {
 	that.setState({ submit_message: '', error_data: '', error_ie: '' })
 	const nomeIsValid = Boolean(that.state.nome)
 	const cpfIsValid = that.state.cpf.length === 0 || that.state.cpf.length === 11
 	const cnpjIsValid = that.state.cnpj.length === 14
+	const cnpjIsNotDuplicate = cnpjIsValid && await notDuplicate(that.state.cnpj)
 	const razaoSocialIsValid = Boolean(that.state.razaoSocial)
 	const enderecoIsValid = Boolean(that.state.endereco)
 	const cepIsValid = Boolean(that.state.cep)
@@ -12,7 +14,7 @@ const submit = (that) => async () => {
 	const cidadeEstadoIsValid = that.state.cidadeEstado.includes(' - ')
 	const foneIsValid = that.state.fone.length === 11 || that.state.fone.length === 10
 	if (nomeIsValid && cpfIsValid && cnpjIsValid && razaoSocialIsValid && enderecoIsValid &&
-				cepIsValid && bairroIsValid && cidadeEstadoIsValid && foneIsValid) {
+				cepIsValid && bairroIsValid && cidadeEstadoIsValid && foneIsValid && cnpjIsNotDuplicate) {
 		that.changeUiState('SUBMIT')
 		try {
 			const result = await axios.get(`${process.env.BACKEND_URL}/submit?
@@ -52,6 +54,7 @@ const submit = (that) => async () => {
 					error_nome: '',
 					error_cpf: '',
 					error_cnpj: '',
+					error_cnpj_duplicate: '',
 					error_razaoSocial: '',
 					error_endereco: '',
 					error_cep: '',
@@ -86,6 +89,10 @@ const submit = (that) => async () => {
 		that.setState({ error_cnpj: '' })
 	:
 		that.setState({ error_cnpj: 'CNPJ: Deve ter 14 dígitos' })
+	cnpjIsNotDuplicate ?
+		that.setState({ error_cnpj_duplicate: '' })
+	:
+		that.setState({ error_cnpj_duplicate: 'CNPJ já cadastrado' })
 	razaoSocialIsValid ?
 		that.setState({ error_razaoSocial: '' })
 	:

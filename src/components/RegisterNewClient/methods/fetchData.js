@@ -3,7 +3,7 @@ import axios from 'axios'
 const fetchData = (that) => async () => {
 	if (that.state.cnpj.length === 14) {
 		that.changeUiState('FETCH_DATA')
-		that.setState({ error_cnpj: '', submit_message: '' })
+		that.setState({ error_cnpj: '', error_cnpj_duplicate: '', submit_message: '' })
 		try {
 			const { data: {error}, data: {values} } = await axios.get(`${process.env.BACKEND_URL}/business-info?cnpj=${that.state.cnpj}`)
 			console.log(values)
@@ -31,7 +31,7 @@ const fetchData = (that) => async () => {
 			that.setState({ error_data: 'Ocorreu um erro no sistema. Tente novamente mais tarde' })
 		}
 	} else {
-		that.setState({ error_cnpj: 'CNPJ: Deve ter 14 dígitos', submit_message: '' })
+		that.setState({ error_cnpj: 'CNPJ: Deve ter 14 dígitos', error_cnpj_duplicate: '', submit_message: '' })
 	}
 }
 
