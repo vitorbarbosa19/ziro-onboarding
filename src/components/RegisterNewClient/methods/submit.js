@@ -1,5 +1,6 @@
 import axios from 'axios'
 import notDuplicate from '../utils/notDuplicate'
+import encodeParameter from '../utils/encodeParameter'
 
 const submit = (that) => async () => {
 	that.setState({ submit_message: '', error_data: '', error_ie: '' })
@@ -23,8 +24,8 @@ const submit = (that) => async () => {
 				cpf=${that.state.cpf}&
 				cnpj=${that.state.cnpj}&
 				ie=${that.state.inscricaoEstadual}&
-				razaoSocial=${that.state.razaoSocial.toUpperCase().trim()}&
-				nomeFantasia=${that.state.nomeFantasia.toUpperCase().trim()}&
+				razaoSocial=${encodeParameter(that.state.razaoSocial.toUpperCase().trim())}&
+				nomeFantasia=${encodeParameter(that.state.nomeFantasia.toUpperCase().trim())}&
 				endereco=${that.state.endereco.toUpperCase().trim()}&
 				bairro=${that.state.bairro.toUpperCase().trim()}&
 				cep=${that.state.cep}&
