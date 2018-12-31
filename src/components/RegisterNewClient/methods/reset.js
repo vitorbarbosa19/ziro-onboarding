@@ -13,7 +13,7 @@ const reset = (that) => () => {
 		cidadeEstado: '',
 		fone: '',
 		email: '',
-		referencia: '',
+		assessor: '',
 		error_nome: '',
 		error_cpf: '',
 		error_cnpj: '',
@@ -26,6 +26,7 @@ const reset = (that) => () => {
 		error_fone: '',
 		error_data: '',
 		error_ie: '',
+		error_assessor: '',
 		submit_message: ''
 	})
 	that.changeUiState('RESET')
