@@ -31,7 +31,7 @@ export default class RegisterNewClient extends Component {
 			cidadeEstado: '',
 			fone: '',
 			email: '',
-			referencia: '',
+			assessor: '',
 			/* ERROR MESSAGES */
 			error_nome: '',
 			error_cpf: '',
@@ -45,6 +45,7 @@ export default class RegisterNewClient extends Component {
 			error_fone: '',
 			error_data: '',
 			error_ie: '',
+			error_assessor: '',
 			/* SUBMIT MESSAGE */
 			submit_message: ''
 		}
