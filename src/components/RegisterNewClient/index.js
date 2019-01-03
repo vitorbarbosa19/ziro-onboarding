@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { initialState, transition } from './utils/stateMachine'
+import fetchInitialData from './utils/fetchInitialData'
 import updateField from './methods/updateField'
 import fetchData from './methods/fetchData'
 import fetchIE from './methods/fetchIE'
@@ -17,6 +18,8 @@ export default class RegisterNewClient extends Component {
 		this.state = {
 			/* UI INITIAL STATE */
 			uiState: initialState,
+			/* INITIAL DATA */
+			representatives: [],
 			/* FIELDS */
 			nome: '',
 			rg:'',
@@ -57,6 +60,10 @@ export default class RegisterNewClient extends Component {
 	fetchIE = fetchIE(this)
 	submit = submit(this)
 	reset = reset(this)
+	/* LIFECYCLE */
+	async componentDidMount() {
+		this.setState(await fetchInitialData())
+	}
 	/* ------- */
 	render() {
 		return (

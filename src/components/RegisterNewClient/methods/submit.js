@@ -14,7 +14,7 @@ const submit = (that) => async () => {
 	const bairroIsValid = Boolean(that.state.bairro)
 	const cidadeEstadoIsValid = that.state.cidadeEstado.includes(' - ')
 	const foneIsValid = that.state.fone.length === 11 || that.state.fone.length === 10
-	const assessorIsValid = Boolean(['alan', 'mage', 'rubia'].filter(name => name === that.state.assessor.toLowerCase()).pop())
+	const assessorIsValid = Boolean(that.state.representatives.filter(name => name.toLowerCase() === that.state.assessor.toLowerCase()).pop())
 	if (nomeIsValid && cpfIsValid && cnpjIsValid && razaoSocialIsValid && enderecoIsValid && cepIsValid
 			&& bairroIsValid && cidadeEstadoIsValid && foneIsValid && cnpjIsNotDuplicate && assessorIsValid) {
 		that.changeUiState('SUBMIT')
