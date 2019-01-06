@@ -1,11 +1,11 @@
 export default [
 	{
 		label: 'Nome',
-		value: 'Ziro Assessoria e Consultoria'
+		value: 'Ziro Negócios Digitais'
 	},
 	{
 		label: 'Cnpj',
-		value: '13.275.070/0001-02'
+		value: '28.026.371/0001-61'
 	},
 	{
 		label: 'Celular 1',
@@ -33,7 +33,7 @@ export default [
 	},
 	{
 		label: 'Endereço',
-		value: 'Rua Ribeiro de Lima, 453, Loja 173 - Bom Retiro'
+		value: 'Rua Lubavitch, 71 - Bom Retiro'
 	},
 	{
 		label: 'Cidade - Estado',
@@ -41,6 +41,6 @@ export default [
 	},
 	{
 		label: 'Cep',
-		value: '01.122-000'
+		value: '01123-010'
 	}
 ]
