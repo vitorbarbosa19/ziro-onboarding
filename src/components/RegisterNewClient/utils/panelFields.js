@@ -17,7 +17,7 @@ export default [
 	},
 	{
 		label: 'Fone',
-		value: '(11)2737-0213'
+		value: '(11)3334-0920'
 	},
 	{
 		label: 'Email',
