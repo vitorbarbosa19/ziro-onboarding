@@ -1,4 +1,5 @@
 import axios from 'axios'
+import generateAddress from '../utils/generateAddress'
 
 const fetchData = (that) => async () => {
 	if (that.state.cnpj.length === 14) {
@@ -11,7 +12,7 @@ const fetchData = (that) => async () => {
 				that.setState({
 					razaoSocial: values.nome,
 					nomeFantasia: values.fantasia,
-					endereco: `${values.logradouro} ${values.numero} ${values.complemento}`,
+					endereco: generateAddress(values.logradouro, values.numero, values.complemento),
 					cep: values.cep.replace(/\W+/g,''),
 					bairro: values.bairro,
 					cidadeEstado: `${values.municipio} - ${values.uf}`,
