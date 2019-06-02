@@ -50,6 +50,7 @@ export default class RegisterNewClient extends Component {
 			error_fone: '',
 			error_data: '',
 			error_ie: '',
+			error_cacador: '',
 			error_assessor: '',
 			/* SUBMIT MESSAGE */
 			submit_message: ''

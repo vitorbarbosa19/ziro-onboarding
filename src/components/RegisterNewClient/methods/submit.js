@@ -15,8 +15,9 @@ const submit = (that) => async () => {
 	const cidadeEstadoIsValid = that.state.cidadeEstado.includes(' - ')
 	const foneIsValid = that.state.fone.length === 11 || that.state.fone.length === 10
 	const assessorIsValid = Boolean(that.state.representatives.filter(name => name.toLowerCase() === that.state.assessor.toLowerCase()).pop())
+	const cacadorIsValid = Boolean(that.state.hunters.filter(name => name.toLowerCase() === that.state.cacador.toLowerCase()).pop())
 	if (nomeIsValid && cpfIsValid && cnpjIsValid && razaoSocialIsValid && enderecoIsValid && cepIsValid
-			&& bairroIsValid && cidadeEstadoIsValid && foneIsValid && cnpjIsNotDuplicate && assessorIsValid) {
+			&& bairroIsValid && cidadeEstadoIsValid && foneIsValid && cnpjIsNotDuplicate && assessorIsValid && cacadorIsValid) {
 		that.changeUiState('SUBMIT')
 		try {
 			const result = await axios.get(`${process.env.BACKEND_URL}/submit?
@@ -124,6 +125,10 @@ const submit = (that) => async () => {
 		that.setState({ error_assessor: '' })
 	:
 		that.setState({ error_assessor: 'Assessor não existe' })
+	cacadorIsValid ?
+		that.setState({ error_cacador: '' })
+	:
+		that.setState({ error_cacador: 'Caçador não existe' })
 }
 
 export default submit

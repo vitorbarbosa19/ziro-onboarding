@@ -17,6 +17,7 @@ const Errors = (props) => (
 		{props.errors.error_bairro && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_bairro}</span>}
 		{props.errors.error_cidadeEstado && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_cidadeEstado}</span>}
 		{props.errors.error_fone && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_fone}</span>}
+		{props.errors.error_cacador && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_cacador}</span>}
 		{props.errors.error_assessor && <span style={errorMessage}>{Alert(14,14)}&nbsp;{props.errors.error_assessor}</span>}
 	</div>
 )
