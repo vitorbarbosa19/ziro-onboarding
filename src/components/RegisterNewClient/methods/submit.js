@@ -35,6 +35,7 @@ const submit = (that) => async () => {
 				estado=${that.state.cidadeEstado.split('-')[1].trim()}&
 				fone=${that.state.fone}&
 				email=${that.state.email}&
+				cacador=${that.state.cacador.toUpperCase().trim()}&
 				assessor=${that.state.assessor.toUpperCase().trim()}`)
 			if (result.data === 'SUCCESS') {
 				console.log(result.data)
@@ -53,6 +54,7 @@ const submit = (that) => async () => {
 					cidadeEstado: '',
 					fone: '',
 					email: '',
+					cacador: '',
 					assessor: '',
 					error_nome: '',
 					error_cpf: '',
@@ -66,6 +68,7 @@ const submit = (that) => async () => {
 					error_fone: '',
 					error_data: '',
 					error_ie: '',
+					error_cacador: '',
 					error_assessor: '',
 					submit_message: 'Dados enviados com sucesso!'
 				})
