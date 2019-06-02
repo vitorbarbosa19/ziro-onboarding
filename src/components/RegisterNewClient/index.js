@@ -34,6 +34,7 @@ export default class RegisterNewClient extends Component {
 			cidadeEstado: '',
 			fone: '',
 			email: '',
+			cacador: '',
 			assessor: '',
 			/* ERROR MESSAGES */
 			error_nome: '',

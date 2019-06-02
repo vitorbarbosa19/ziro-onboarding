@@ -44,7 +44,7 @@ export const form = {
 		'razaoSocial razaoSocial nomeFantasia nomeFantasia'
 		'endereco endereco endereco cep'
 		'bairro bairro cidadeEstado cidadeEstado'
-		'fone email email assessor'
+		'fone email cacador assessor'
 		/ 25% 25% 25% 25%`
 }
 
