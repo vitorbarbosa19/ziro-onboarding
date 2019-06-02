@@ -37,13 +37,14 @@ const config = {
 }
 
 if (process.env.NODE_ENV !== 'production') {
-	const { backendUrl, clientList, representatives } = require('./credentials')
+	const { backendUrl, clientList, representatives, hunters } = require('./credentials')
 	config.plugins.push(
 		new webpack.DefinePlugin({
 			'process.env': {
 				BACKEND_URL: JSON.stringify(backendUrl),
 				CLIENT_LIST: JSON.stringify(clientList),
-				REPRESENTATIVES: JSON.stringify(representatives)
+				REPRESENTATIVES: JSON.stringify(representatives),
+				HUNTERS: JSON.stringify(hunters)
 			}
 		})
 	)
@@ -58,6 +59,7 @@ if (process.env.NODE_ENV === 'production') {
 				BACKEND_URL: JSON.stringify(process.env.BACKEND_URL),
 				CLIENT_LIST: JSON.stringify(process.env.CLIENT_LIST),
 				REPRESENTATIVES: JSON.stringify(process.env.REPRESENTATIVES),
+				HUNTERS: JSON.stringify(process.env.HUNTERS),
 				NODE_ENV: JSON.stringify('production')
 			}
 		})

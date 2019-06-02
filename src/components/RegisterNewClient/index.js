@@ -20,6 +20,7 @@ export default class RegisterNewClient extends Component {
 			uiState: initialState,
 			/* INITIAL DATA */
 			representatives: [],
+			hunters: [],
 			/* FIELDS */
 			nome: '',
 			rg:'',
