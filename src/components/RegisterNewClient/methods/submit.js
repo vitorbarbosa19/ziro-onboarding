@@ -15,9 +15,9 @@ const submit = (that) => async () => {
 	const cidadeEstadoIsValid = that.state.cidadeEstado.includes(' - ')
 	const foneIsValid = that.state.fone.length === 11 || that.state.fone.length === 10
 	const assessorIsValid = Boolean(that.state.representatives.filter(name => name.toLowerCase() === that.state.assessor.toLowerCase()).pop())
-	const cacadorIsValid = Boolean(that.state.hunters.filter(name => name.toLowerCase() === that.state.cacador.toLowerCase()).pop())
+	const afiliadoIsValid = Boolean(that.state.hunters.filter(name => name.toLowerCase() === that.state.afiliado.toLowerCase()).pop())
 	if (nomeIsValid && cpfIsValid && cnpjIsValid && razaoSocialIsValid && enderecoIsValid && cepIsValid
-			&& bairroIsValid && cidadeEstadoIsValid && foneIsValid && cnpjIsNotDuplicate && assessorIsValid && cacadorIsValid) {
+			&& bairroIsValid && cidadeEstadoIsValid && foneIsValid && cnpjIsNotDuplicate && assessorIsValid && afiliadoIsValid) {
 		that.changeUiState('SUBMIT')
 		try {
 			const result = await axios.get(`${process.env.BACKEND_URL}/submit?
@@ -35,7 +35,7 @@ const submit = (that) => async () => {
 				estado=${that.state.cidadeEstado.split('-')[1].trim()}&
 				fone=${that.state.fone}&
 				email=${that.state.email}&
-				cacador=${that.state.cacador.toUpperCase().trim()}&
+				cacador=${that.state.afiliado.toUpperCase().trim()}&
 				assessor=${that.state.assessor.toUpperCase().trim()}`)
 			if (result.data === 'SUCCESS') {
 				console.log(result.data)
@@ -54,7 +54,7 @@ const submit = (that) => async () => {
 					cidadeEstado: '',
 					fone: '',
 					email: '',
-					cacador: '',
+					afiliado: '',
 					assessor: '',
 					error_nome: '',
 					error_cpf: '',
@@ -68,7 +68,7 @@ const submit = (that) => async () => {
 					error_fone: '',
 					error_data: '',
 					error_ie: '',
-					error_cacador: '',
+					error_afiliado: '',
 					error_assessor: '',
 					submit_message: 'Dados enviados com sucesso!'
 				})
@@ -128,10 +128,10 @@ const submit = (that) => async () => {
 		that.setState({ error_assessor: '' })
 	:
 		that.setState({ error_assessor: 'Assessor não existe' })
-	cacadorIsValid ?
-		that.setState({ error_cacador: '' })
+	afiliadoIsValid ?
+		that.setState({ error_afiliado: '' })
 	:
-		that.setState({ error_cacador: 'Caçador não existe' })
+		that.setState({ error_afiliado: 'Afiliado não existe' })
 }
 
 export default submit
